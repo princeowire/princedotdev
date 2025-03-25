@@ -1,103 +1,257 @@
+'use client';
+
 import Image from "next/image";
+import { useEffect, useRef } from "react";
+import Nav from "@/components/nav/Nav";
+import sticker from "../../public/asset/tenor-two.gif";
+import certificate from "../../public/asset/sabi-ticket.png";
+import blob from '../../public/asset/blob.png';
+import nameArrow from '../../public/asset/name_arrow curved_.svg';
+import prince from '../../public/asset/prince.jpg';
+import sndArrow from '../../public/asset/pic-arrow.png';
+import hobbyArrow from '../../public/asset/hobby arrow.png';
+import ui from '../../public/asset/ui.png';
+import teamIcon from '../../public/asset/team.png';
+import optiIcon from '../../public/asset/optimization.png';
+import Link from "next/link";
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const projectData = [
+    {id: 1, title: "Project 1", description: "Project description", link: "google.com", style: "bg-[#1E1E1E] text-red-500"},
+    {id: 2, title: "Project 2", description: "Project description", link: "google.com", style: "bg-[#1E1E1E]"},
+  ]
+  const colors = ["bg-fuchsia-800", "bg-blue-800", "bg-cyan-800", "bg-emerald-800", "bg-pink-800", "bg-violet-800"];
+  const cardRef = useRef([]);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  useEffect(() => {
+    let angle = (cardRef.current.length - 1) * 10;
+
+    cardRef.current.forEach((card) => {
+      if (card) {
+        card.style.transform = `rotate(${angle}deg)`;
+        angle -= 10;
+      }
+    });
+  }, []);
+
+  return (
+    <div className="bg-[#101113] text-white">
+
+      <Nav />
+
+      <main className="flex items-center justify-center flex-col">
+
+        <section className="max-w-[1000px] w-full py-4 pt-20">
+
+          <Image className="z-0 top-[-200px] right-0  w-[800px] h-[500px] absolute" src={blob} alt='blob' />
+
+          <p>Hi there</p>
+
+          <h1 className="text-3xl">I'm Prince Owire</h1>
+
+          <p className="font-bold text-white text-[45.6px] leading-[82.7px]">
+            A FRONTEND DEVELOPER
+          </p>
+
+          <div className='relative flex w-fit'>
+            <span className='w-[25px] h-[25px] bg-[#ffbb00e5] z-[0] absolute  left-[-10px] rounded-full'></span>
+            <a href="" className="z-[2]">About me {"▷"}</a>
+          </div>
+
+        </section>
+
+        <section className="bg-amber-400 w-full flex items-center justify-center">
+
+          <div className="max-w-[1000px] w-full h-screen flex justify-center items-center">
+            <div className="basis-1/2 h-full flex items-center justify-center flex-col">
+              <h3 className="text-4xl">Wanna see magic?</h3>
+              <p className="text-3xl">Boom</p>
+            </div>
+
+            <div className="basis-1/2 h-full relative">
+              {colors.map((bgColor, index) => (
+                <div
+                  key={index}
+                  ref={(el) => {
+                    if (el && !cardRef.current.includes(el)) {
+                      cardRef.current.push(el);
+                    }
+                  }}
+                  className={`card flex justify-center items-center text-2xl text-center w-[350px] h-[350px] p-4 absolute rounded-3xl ${bgColor}`}
+                >
+                  <p>Emm, what does this card do again?</p>
+
+                </div>
+              ))}
+            </div>
+
+          </div>
+
+        </section>
+
+        <section className="max-w-[1000px] w-full">
+
+          <div className=" flex items-center justify-between py-14">
+            <div className="basis-1/3">
+
+              <div className="flex absolute gap-1">
+                <p className="caligraphy bent">My certificates </p>
+                <Image src={nameArrow} alt="name arrow" />
+              </div>
+
+              <div className="flex items-center justify-between mt-14">
+                <div className="w-[40px] h-[40px] flex justify-center items-center border-2 border-amber-800 rounded-full m-1"><p>◁</p></div>
+                <Image src={certificate} alt="certificate" className="w-[calc(100%-108px)]" />
+                <div className="w-[40px] h-[40px] flex justify-center items-center border-2 border-amber-800 rounded-full m-1"><p>▷</p></div>
+              </div>
+
+              <div className="sticker flex items-center justify-center">
+                <Image src={sticker} alt="sticker" className="rounded-[10px] mt-8 bent w-[120px]" />
+              </div>
+
+            </div>
+
+            <div className="basis-1/3 h-full flex items-center justify-center relative">
+
+              <Image src={prince} alt=" this is me" className="rounded-[200px] w-[calc(100%-50px)] h-full blur-xs hover:blur-none transition" />
+
+              <div className="absolute left-0 bottom-[-30px] flex gap-2">
+                <p className="caligraphy bent pt-6">Me</p>
+                <Image src={sndArrow} alt="snd arrow" />
+              </div>
+
+            </div>
+
+            <div className="basis-1/3 relative">
+
+              <div className="flex absolute top-[-50px] gap-1">
+                <p className="caligraphy">My Qualification </p>
+                <Image src={nameArrow} alt="name arrow" />
+              </div>
+
+              <div className="qualificatios text-center">
+
+                <div>
+                  <h3 className="underline text-[20px] font-semibold">SECONDARY SCHOOL CERTIFICATION</h3>
+                  <p className="text-[16px]">THE SHULAMITE COLLEGE</p>
+                  <p className="text-[12px]">2022</p>
+                </div>
+
+                <div className="m-4">
+                  <h3 className="underline text-[20px] font-semibold">BOOT CAMPS</h3>
+                  <p className="text-[16px]">FREECODECAMP</p>
+                  <p className="text-[12px]">2022</p>
+                </div>
+
+              </div>
+
+              <div className="hobby relative flex flex-col">
+                <div className="flex absolute right-7 gap-1">
+                  <Image src={hobbyArrow} alt="name arrow" />
+                  <p className="caligraphy rotate">My hobby </p>
+                </div>
+
+                <p className="caligraphy text-center mt-14 font-light">Wacthing Anime</p>
+                <p className="caligraphy text-center font-light my-2">Listening to music</p>
+                <p className="caligraphy text-center font-light">Playing Table tennis</p>
+
+              </div>
+
+            </div>
+          </div>
+
+          <div className='relative flex w-fit my-4 mx-auto'>
+            <span className='w-[25px] h-[25px] bg-[#ffbb00e5] z-[0] absolute  left-[-10px] rounded-full'></span>
+            <a href="" className="z-[2]">See More About Me {"▷"}</a>
+          </div>
+
+        </section>
+
+        <div className="overflow-hidden whitespace-nowrap py-2 w-full bg-black">
+          <div className="marquee text-xl font-bold flex gap-10">
+            <p>holy moly</p>
+            <p>holy moly</p>
+            <p>holy moly</p>
+            <p>holy moly</p>
+            <p>holy moly</p>
+            <p>holy moly</p>
+            <p>holy moly</p>
+            <p>holy moly</p>
+            <p>holy moly</p>
+          </div>
         </div>
+
+
+        <section className="services w-full flex flex-col items-center justify-center relative">
+
+          <p className="text-center text-[40px] absolute right-0 rotate-90 font-bold text-[#232020]">SERVICES</p>
+
+          <div className="max-w-[1000px] w-full gap-4 flex items-center justify-between py-8 relative">
+
+
+            <div className="max-w-[280px] bg-[#1E1E1E] p-4 rounded-3xl">
+
+              <Image src={ui} alt="ui icon" />
+
+              <div className="pt-7">
+                <h2 className="text-xl pb-2">UI/UX Design Implementation</h2>
+                <p className="text-xs text-gray-300">Converting Figma/XD designs into responsive web pages, Improving website layout, animations, and interactivity, Optimizing user experience (UX) with smooth navigation and design</p>
+              </div>
+
+            </div>
+
+            <div className="max-w-[280px] bg-[#1E1E1E] p-4 rounded-3xl">
+
+              <Image src={teamIcon} alt="ui icon" />
+
+              <div className="pt-7">
+                <h2 className="text-xl pb-2">Top Noutch Social & Team Managing Skills </h2>
+                <p className="text-xs text-gray-300">Improving website speed, search engine optimization, and accessibility
+                  Optimizing images, lazy loading, and efficient state management
+                  Enhancing performance using Next.js (SSG, ISR, etc.)</p>
+              </div>
+
+            </div>
+
+            <div className="max-w-[280px] bg-[#1E1E1E] p-4 rounded-3xl">
+
+              <Image src={optiIcon} alt="ui icon" />
+
+              <div className="pt-7">
+                <h2 className="text-xl pb-2">Frontend Optimization, SEO & Performance</h2>
+                <p className="text-xs text-gray-300">Improving website speed, search engine optimization, and accessibility
+                  Optimizing images, lazy loading, and efficient state management
+                  Enhancing performance using Next.js (SSG, ISR, etc.)</p>
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+        <section className="project">
+
+          <h2 className="text-center pt-8 text-3xl text-amber-400 font-semibold">Projects</h2>
+
+          <div className="max-w-[1000px] w-full flex">
+
+            {projectData.map((project) => (
+              <div>
+                <div key={project.id} className="bg-[#1E1E1E] p-4 rounded-3xl">
+                  <h3 className="text-xl">{project.title}</h3>
+                  <p >{project.description}</p>
+                  <a  href={project.link} target="_blank">click me</a>
+                </div>
+              </div>
+            ))}
+
+          </div>
+          
+        </section>
+
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+
     </div>
   );
 }
