@@ -1,27 +1,33 @@
 'use client';
 
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState} from "react";
+
+
 import Nav from "@/components/nav/Nav";
+import linkArrow from "../../public/asset/link-arrow.svg";
 import sticker from "../../public/asset/tenor-two.gif";
 import certificate from "../../public/asset/sabi-ticket.png";
 import blob from '../../public/asset/blob.png';
 import nameArrow from '../../public/asset/name_arrow curved_.svg';
-import prince from '../../public/asset/prince.jpg';
 import sndArrow from '../../public/asset/pic-arrow.png';
 import hobbyArrow from '../../public/asset/hobby arrow.png';
 import ui from '../../public/asset/ui.png';
 import teamIcon from '../../public/asset/team.png';
 import optiIcon from '../../public/asset/optimization.png';
-import Link from "next/link";
+import prince from '../../public/asset/prince.jpg';
+import blueice from '../../public/asset/blueice.png';
+import euphoria from '../../public/asset/euphoria.png';
+
 
 export default function Home() {
   const projectData = [
-    {id: 1, title: "Project 1", description: "Project description", link: "google.com", style: "bg-[#1E1E1E] text-red-500"},
-    {id: 2, title: "Project 2", description: "Project description", link: "google.com", style: "bg-[#1E1E1E]"},
+    {id: 1, title: "Euphoria", description: "Project description: Euphoria is a sleek, responsive e-commerce platform built with Next.js and Tailwind CSS. It delivers a seamless shopping experience with a clean UI, fast performance, and dynamic content rendering. Designed for fashion, lifestyle, or retail brands, Euphoria focuses on both functionality and aesthetics.", link: "google.com", style: "basis-[25%] min-w-[250px]", details: "hello vbibvluib", src: euphoria, },
+    {id: 2, title: "Project 2", description: "Project description", link: "google.com", style: "basis-[60%] min-w-[250px]", details: "hello vbibvluib", src: blueice, },
   ]
   const colors = ["bg-fuchsia-800", "bg-blue-800", "bg-cyan-800", "bg-emerald-800", "bg-pink-800", "bg-violet-800"];
   const cardRef = useRef([]);
+  const [showMore, setShowMore] = useState(false);
 
   useEffect(() => {
     let angle = (cardRef.current.length - 1) * 10;
@@ -37,8 +43,6 @@ export default function Home() {
   return (
     <div className="bg-[#101113] text-white">
 
-      <Nav />
-
       <main className="flex items-center justify-center flex-col">
 
         <section className="max-w-[1000px] w-full py-4 pt-20">
@@ -53,10 +57,16 @@ export default function Home() {
             A FRONTEND DEVELOPER
           </p>
 
-          <div className='relative flex w-fit'>
-            <span className='w-[25px] h-[25px] bg-[#ffbb00e5] z-[0] absolute  left-[-10px] rounded-full'></span>
-            <a href="" className="z-[2]">About me {"▷"}</a>
+          <div className="relative flex w-fit group overflow-hidden">
+
+            <span
+              className="absolute left-0 top-1/2 -translate-y-1/2 h-[25px] w-[25px] bg-[#ffbb00e5] z-0 rounded-full transition-all duration-300 group-hover:w-full"
+            ></span>
+
+            <a href="" className="z-10 px-3 py-1 relative">About me {"▷"}</a>
+            
           </div>
+
 
         </section>
 
@@ -113,7 +123,7 @@ export default function Home() {
 
             <div className="basis-1/3 h-full flex items-center justify-center relative">
 
-              <Image src={prince} alt=" this is me" className="rounded-[200px] w-[calc(100%-50px)] h-full blur-xs hover:blur-none transition" />
+              <Image src={prince} alt=" this is Prince Owire" className="rounded-[200px] w-[calc(100%-50px)] h-full blur-xs hover:blur-none transition" />
 
               <div className="absolute left-0 bottom-[-30px] flex gap-2">
                 <p className="caligraphy bent pt-6">Me</p>
@@ -160,9 +170,11 @@ export default function Home() {
             </div>
           </div>
 
-          <div className='relative flex w-fit my-4 mx-auto'>
-            <span className='w-[25px] h-[25px] bg-[#ffbb00e5] z-[0] absolute  left-[-10px] rounded-full'></span>
-            <a href="" className="z-[2]">See More About Me {"▷"}</a>
+          <div className='relative group flex w-fit my-4 mx-auto'>
+            <span
+              className="absolute left-0 top-1/2 -translate-y-1/2 h-[25px] w-[25px] bg-[#ffbb00e5] z-0 rounded-full transition-all duration-300 group-hover:w-full"
+            ></span>
+            <a href="" className='z-10 px-3 py-1 relative'>See More About Me {"▷"}</a>
           </div>
 
         </section>
@@ -180,7 +192,6 @@ export default function Home() {
             <p>holy moly</p>
           </div>
         </div>
-
 
         <section className="services w-full flex flex-col items-center justify-center relative">
 
@@ -230,20 +241,56 @@ export default function Home() {
 
         </section>
 
-        <section className="project">
+        <section className="project w-full flex flex-col items-center justify-center relative mb-8">
 
-          <h2 className="text-center pt-8 text-3xl text-amber-400 font-semibold">Projects</h2>
+          <h2 className="text-center py-8 text-3xl text-amber-400 font-semibold">Projects</h2>
 
-          <div className="max-w-[1000px] w-full flex">
+          <div className="max-w-[1000px] w-full flex flex-wrap gap-4 justify-between">
 
             {projectData.map((project) => (
-              <div>
-                <div key={project.id} className="bg-[#1E1E1E] p-4 rounded-3xl">
-                  <h3 className="text-xl">{project.title}</h3>
-                  <p >{project.description}</p>
-                  <a  href={project.link} target="_blank">click me</a>
+                <div className={`flex flex-col grow shrink-0 w-full bg-[#1E1E1E] p-2 rounded-3xl ${project.style}`}  key={project.id}>
+
+                  <div className="relative group">
+                    <div className="absolute top-0 left-0 w-full h-full bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 flex flex-col justify-end p-4 text-white rounded-2xl">
+
+                      <a className="absolute top-0 right-0 m-2 rounded-full bg-[#ffbb00e5]" href={project.link} target="_blank">
+                        <Image className="w-[50px]" src={linkArrow}/>
+                      </a>
+
+                    <div className="text-left mt-auto">
+                      <h3 className="text-2xl mb-2">{project.title}</h3>
+
+                      <p className="text-sm text-gray-300">
+                        {showMore
+                          ? project.description
+                          : `${project.description.slice(0, 60)}...`}
+                      </p>
+
+                      <button
+                        onClick={(e) => {
+                          e.stopPropagation(); // stop hover issues
+                          setShowMore(!showMore);
+                        }}
+                        className="mt-2 text-sm  underline"
+                      >
+                        {showMore ? "See less" : "See more"}
+                      </button>
+                    </div>
+
+                    </div>
+
+                    <div className="relative w-full h-96"> {/* or use h-[300px] or any height */}
+                      <Image
+                        src={project.src}
+                        alt="prince"
+                        layout="fill"
+                        className="object-cover rounded-2xl"
+                      />
+                    </div>
+    
+                  </div>
+
                 </div>
-              </div>
             ))}
 
           </div>
