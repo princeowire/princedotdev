@@ -51,7 +51,7 @@ export default function Home() {
 
           <p>Hi there</p>
 
-          <h1 className="text-3xl">I'm Prince Owire</h1>
+          <h1 className="text-3xl">I&apos;m Prince Owire</h1>
 
           <p className="font-bold text-white text-[45.6px] leading-[82.7px]">
             A FRONTEND DEVELOPER
