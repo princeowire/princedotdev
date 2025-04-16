@@ -19,11 +19,15 @@ import prince from '../../public/asset/prince.jpg';
 import blueice from '../../public/asset/blueice.png';
 import euphoria from '../../public/asset/euphoria.png';
 
+import ContactForm from "@/components/contact-from/contact-form";
 
 export default function Home() {
   const projectData = [
     {id: 1, title: "Euphoria", description: "Project description: Euphoria is a sleek, responsive e-commerce platform built with Next.js and Tailwind CSS. It delivers a seamless shopping experience with a clean UI, fast performance, and dynamic content rendering. Designed for fashion, lifestyle, or retail brands, Euphoria focuses on both functionality and aesthetics.", link: "google.com", style: "basis-[25%] min-w-[250px]", details: "hello vbibvluib", src: euphoria, },
     {id: 2, title: "Project 2", description: "Project description", link: "google.com", style: "basis-[60%] min-w-[250px]", details: "hello vbibvluib", src: blueice, },
+    {id: 3, title: "Euphoria", description: "Project description: Euphoria is a sleek, responsive e-commerce platform built with Next.js and Tailwind CSS. It delivers a seamless shopping experience with a clean UI, fast performance, and dynamic content rendering. Designed for fashion, lifestyle, or retail brands, Euphoria focuses on both functionality and aesthetics.", link: "google.com", style: "basis-[60%] min-w-[250px]", details: "hello vbibvluib", src: euphoria, },
+    {id: 4, title: "Project 2", description: "Project description", link: "google.com", style: "basis-[25%] min-w-[250px]", details: "hello vbibvluib", src: blueice, },
+
   ]
   const colors = ["bg-fuchsia-800", "bg-blue-800", "bg-cyan-800", "bg-emerald-800", "bg-pink-800", "bg-violet-800"];
   const cardRef = useRef([]);
@@ -295,6 +299,21 @@ export default function Home() {
 
           </div>
           
+        </section>
+
+        <section className="conatct max-w-[1000px]">
+          <h2 className="text-center py-8 text-3xl text-amber-400 font-semibold">Contact Me</h2>
+
+          <div class="relative w-full p-4">
+
+            <div class="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-amber-400"></div>
+
+            <ContactForm />
+
+            <div class="absolute bottom-0 right-0 w-10 h-10 border-b-2 border-r-2 border-amber-400"></div>
+
+          </div>
+
         </section>
 
       </main>
