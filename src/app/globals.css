@@ -1,8 +1,8 @@
 @import "tailwindcss";
 
 .card {
-  top: calc(50% - 175px);
-  left: calc(50% - 175px);
+  top: calc(50% - 125px);
+  left: calc(50% - 125px);
 }
 
 .caligraphy {

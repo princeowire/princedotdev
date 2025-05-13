@@ -1,10 +1,12 @@
 'use client';
 
 import Image from "next/image";
+
 import { useEffect, useRef, useState} from "react";
+import { FaCloudDownloadAlt } from "react-icons/fa";
+import { CiLinkedin, CiTwitter, CiMail } from "react-icons/ci";
+import { FaGithub } from "react-icons/fa";
 
-
-import Nav from "@/components/nav/Nav";
 import linkArrow from "../../public/asset/link-arrow.svg";
 import sticker from "../../public/asset/tenor-two.gif";
 import certificate from "../../public/asset/sabi-ticket.png";
@@ -20,6 +22,7 @@ import blueice from '../../public/asset/blueice.png';
 import euphoria from '../../public/asset/euphoria.png';
 
 import ContactForm from "@/components/contact-from/contact-form";
+import AvatarSection from "@/components/welcome/welcome";
 
 export default function Home() {
   const projectData = [
@@ -49,7 +52,7 @@ export default function Home() {
 
       <main className="flex items-center justify-center flex-col">
 
-        <section className="max-w-[1000px] w-full py-4 pt-20">
+        <section className="max-w-[1000px] max-md:px-4 w-full py-4 pt-20 my-8">
 
           <Image className="z-0 top-[-200px] right-0  w-[800px] h-[500px] absolute" src={blob} alt='blob' />
 
@@ -61,52 +64,44 @@ export default function Home() {
             A FRONTEND DEVELOPER
           </p>
 
-          <div className="relative flex w-fit group overflow-hidden">
+          <p className="max-w-[500px] mb-4 text-sm"> Improving website speed, search engine optimization, and accessibility Optimizing images, lazy loading, and efficient state management Enhancing performance using Next.js (SSG, ISR, etc.)</p>
 
-            <span
-              className="absolute left-0 top-1/2 -translate-y-1/2 h-[25px] w-[25px] bg-[#ffbb00e5] z-0 rounded-full transition-all duration-300 group-hover:w-full"
-            ></span>
+          <div className=" flex flex-wrap items-center gap-2">
+            <div className="relative flex w-fit group overflow-hidden">
 
-            <a href="" className="z-10 px-3 py-1 relative">About me {"▷"}</a>
-            
+              <span
+                className="absolute left-0 top-1/2 -translate-y-1/2 h-[25px] w-[25px] bg-[#ffbb00e5] z-0 rounded-full transition-all duration-300 group-hover:w-full"
+              ></span>
+
+              <a href="" className="z-10 px-3 py-1 relative flex items-center justify-center gap-1.5">Resume <FaCloudDownloadAlt /></a>
+
+            </div>
+
+            <div className="flex gap-4">
+              <a href="https://www.linkedin.com/in/prince-owire-841187250/" target="_blank"><CiLinkedin className="w-6 h-6" /></a>
+              <a href="https://github.com/princeowire" target="_blank"><FaGithub className="w-6 h-6" /></a>
+              <a href="https://x.com/OwirePrince" target="_blank"><CiTwitter className="w-6 h-6" /></a>
+              <a href="mailto:princeowire131@gmail.com"><CiMail className="w-6 h-6" /></a>
+            </div>
           </div>
 
 
         </section>
 
-        <section className="bg-amber-400 w-full flex items-center justify-center">
+        <section className="bg-amber-400 w-full flex items-center justify-center my-8">
 
-          <div className="max-w-[1000px] w-full h-screen flex justify-center items-center">
-            <div className="basis-1/2 h-full flex items-center justify-center flex-col">
-              <h3 className="text-4xl">Wanna see magic?</h3>
-              <p className="text-3xl">Boom</p>
-            </div>
+          <div className="max-w-[1000px] max-md:px-4 w-full h-screen flex-wrap flex justify-center items-center">
 
-            <div className="basis-1/2 h-full relative">
-              {colors.map((bgColor, index) => (
-                <div
-                  key={index}
-                  ref={(el) => {
-                    if (el && !cardRef.current.includes(el)) {
-                      cardRef.current.push(el);
-                    }
-                  }}
-                  className={`card flex justify-center items-center text-2xl text-center w-[350px] h-[350px] p-4 absolute rounded-3xl ${bgColor}`}
-                >
-                  <p>Emm, what does this card do again?</p>
-
-                </div>
-              ))}
-            </div>
+            <AvatarSection />
 
           </div>
 
         </section>
 
-        <section className="max-w-[1000px] w-full">
+        <section className="max-w-[1000px] max-md:px-4 w-full my-8">
 
-          <div className=" flex items-center justify-between py-14">
-            <div className="basis-1/3">
+          <div className="flex items-center justify-between flex-wrap max-md:gap-28 py-8">
+            <div className="basis-1/3 max-md:basis-full">
 
               <div className="flex absolute gap-1">
                 <p className="caligraphy bent">My certificates </p>
@@ -125,7 +120,7 @@ export default function Home() {
 
             </div>
 
-            <div className="basis-1/3 h-full flex items-center justify-center relative">
+            <div className="basis-1/3 max-md:basis-full h-full flex items-center justify-center relative">
 
               <Image src={prince} alt=" this is Prince Owire" className="rounded-[200px] w-[calc(100%-50px)] h-full blur-xs hover:blur-none transition" />
 
@@ -136,7 +131,7 @@ export default function Home() {
 
             </div>
 
-            <div className="basis-1/3 relative">
+            <div className="basis-1/3 max-md:basis-full max-md:mt-8 relative">
 
               <div className="flex absolute top-[-50px] gap-1">
                 <p className="caligraphy">My Qualification </p>
@@ -174,7 +169,7 @@ export default function Home() {
             </div>
           </div>
 
-          <div className='relative group flex w-fit my-4 mx-auto'>
+          <div className='relative group flex w-fit mx-auto mt-8'>
             <span
               className="absolute left-0 top-1/2 -translate-y-1/2 h-[25px] w-[25px] bg-[#ffbb00e5] z-0 rounded-full transition-all duration-300 group-hover:w-full"
             ></span>
@@ -183,7 +178,7 @@ export default function Home() {
 
         </section>
 
-        <div className="overflow-hidden whitespace-nowrap py-2 w-full bg-black">
+        <div className="overflow-hidden whitespace-nowrap py-2 w-full my-8 bg-black">
           <div className="marquee text-xl font-bold flex gap-10">
             <p>holy moly</p>
             <p>holy moly</p>
@@ -199,9 +194,9 @@ export default function Home() {
 
         <section className="services w-full flex flex-col items-center justify-center relative">
 
-          <p className="text-center text-[40px] absolute right-0 rotate-90 font-bold text-[#232020]">SERVICES</p>
+          <p className="text-center text-[40px] absolute right-0 max-md:right-[-55px] rotate-90 font-bold text-[#232020]">SERVICES</p>
 
-          <div className="max-w-[1000px] w-full gap-4 flex items-center justify-between py-8 relative">
+          <div className="max-w-[1000px] max-md:px-4 max-md:justify-center w-full gap-4 max-md:flex-wrap flex items-center justify-between py-8 relative">
 
 
             <div className="max-w-[280px] bg-[#1E1E1E] p-4 rounded-3xl">
@@ -245,11 +240,13 @@ export default function Home() {
 
         </section>
 
-        <section className="project w-full flex flex-col items-center justify-center relative mb-8">
+        <section className="project w-full flex flex-col items-center justify-center relative my-8">
 
-          <h2 className="text-center py-8 text-3xl text-amber-400 font-semibold">Projects</h2>
+          <p className="text-center text-[40px] absolute right-0 max-md:right-[-55px] rotate-90 font-bold text-[#232020]">PROJECTS</p>
 
-          <div className="max-w-[1000px] w-full flex flex-wrap gap-4 justify-between">
+          <h2 className="text-center pb-8 text-3xl text-amber-400 font-semibold">Projects</h2>
+
+          <div className="max-w-[1000px] max-md:px-4 w-full flex flex-wrap gap-4 justify-between">
 
             {projectData.map((project) => (
                 <div className={`flex flex-col grow shrink-0 w-full bg-[#1E1E1E] p-2 rounded-3xl ${project.style}`}  key={project.id}>
@@ -299,18 +296,25 @@ export default function Home() {
 
           </div>
           
+          <div className='relative group mt-8'>
+             <span
+              className="absolute left-0 top-1/2 -translate-y-1/2 h-[25px] w-[25px] bg-[#ffbb00e5] z-0 rounded-full transition-all duration-300 group-hover:w-full"
+            ></span>
+          <a href="" className='z-10 px-3 py-1 relative'>See All Projects {"▷"}</a>
+         </div>
+
         </section>
 
-        <section className="conatct max-w-[1000px]">
-          <h2 className="text-center py-8 text-3xl text-amber-400 font-semibold">Contact Me</h2>
+        <section className="conatct max-w-[1000px] max-md:px-4 my-8">
+          <h2 className="text-center pb-8 text-3xl text-amber-400 font-semibold">Contact Me</h2>
 
-          <div class="relative w-full p-4">
+          <div className="relative w-full p-4">
 
-            <div class="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-amber-400"></div>
+            <div className="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-amber-400"></div>
 
             <ContactForm />
 
-            <div class="absolute bottom-0 right-0 w-10 h-10 border-b-2 border-r-2 border-amber-400"></div>
+            <div className="absolute bottom-0 right-0 w-10 h-10 border-b-2 border-r-2 border-amber-400"></div>
 
           </div>
 
