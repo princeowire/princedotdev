@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 
 const Nav = () => {
   return (
@@ -9,9 +10,8 @@ const Nav = () => {
         <a href="./">LOGO</a>
 
         <div className='flex gap-5'>
-          <p>Home</p>
-          <p>Home</p>
-          <p>Home</p>
+          <Link href="/" >Home</Link>
+          <Link href="projects" >Projects</Link>
           <p>Home</p>
         </div>
 
