@@ -6,7 +6,7 @@ import { FaGithub } from "react-icons/fa";
 const Footer = () => {
   return (
     <div className='bg-[#3E3E3E] text-white'>
-      <div className='max-w-[1000px] flex flex-col gap-4 m-auto p-8'>
+      <div className='max-w-[1000px] flex flex-col gap-4 m-auto py-8'>
 
         <div>
           <h1> L O G O </h1>

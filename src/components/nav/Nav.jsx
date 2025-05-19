@@ -12,14 +12,15 @@ const Nav = () => {
         <div className='flex gap-5'>
           <Link href="/" >Home</Link>
           <Link href="projects" >Projects</Link>
-          <p>Home</p>
+          <Link href="about" >About</Link>
+          <Link href="" >blog</Link>
         </div>
 
         <div className='relative group'>
              <span
               className="absolute left-0 top-1/2 -translate-y-1/2 h-[25px] w-[25px] bg-[#ffbb00e5] z-0 rounded-full transition-all duration-300 group-hover:w-full"
             ></span>
-          <a href="" className='z-10 px-3 py-1 relative'>Let talk {"▷"}</a>
+          <a href="contact" className='z-10 px-3 py-1 relative'>Let talk {"▷"}</a>
         </div>
 
       </div>

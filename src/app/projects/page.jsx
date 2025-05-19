@@ -1,94 +1,98 @@
 'use client'
-import React, { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
-import blueice from '../../../public/asset/blueice.png';
-import euphoria from '../../../public/asset/euphoria.png';
+import React from 'react'
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+import blueice from '../../../public/asset/blueice.png'
+import euphoria from '../../../public/asset/euphoria.png'
 
 const projects = [
-  {
-    id: 1,
-    title: "Euphoria",
-    description: "Euphoria is a sleek, responsive e-commerce platform built with Next.js and Tailwind CSS.",
-    link: "https://google.com",
-    details: "hello vbibvluib",
-    src: euphoria,
-  },
-  {
-    id: 2,
-    title: "Project 2",
-    description: "Another cool project.",
-    link: "https://google.com",
-    details: "hello vbibvluib",
-    src: blueice,
-  },
-  {
-    id: 3,
-    title: "Euphoria Again",
-    description: "Same sleek e-commerce platform.",
-    link: "https://google.com",
-    details: "hello vbibvluib",
-    src: euphoria,
-  },
-  {
-    id: 4,
-    title: "Project 2 Again",
-    description: "Another cool project repeated.",
-    link: "https://google.com",
-    details: "hello vbibvluib",
-    src: blueice,
-  },
-];
+  { id: 1, title: "Euphoria", description: "E-commerce with Next.js.", link: "#", src: euphoria },
+  { id: 2, title: "Blue Ice", description: "Cool theme.", link: "#", src: blueice },
+  { id: 3, title: "CommerceX", description: "Real-time analytics.", link: "#", src: euphoria },
+  { id: 4, title: "Frost UI", description: "Component library.", link: "#", src: blueice },
+  { id: 5, title: "WaveTrack", description: "Music player.", link: "#", src: euphoria },
+  { id: 6, title: "PixelPush", description: "Graphic tool.", link: "#", src: blueice },
+]
 
 const Page = () => {
-  const [index, setIndex] = useState(0)
-
-  const handleNext = () => {
-    setIndex((prev) => (prev + 1) % projects.length)
-  }
-
-  const handlePrev = () => {
-    setIndex((prev) => (prev - 1 + projects.length) % projects.length)
-  }
-
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gray-100">
-      <div className="relative w-full max-w-md h-[500px] overflow-hidden border border-gray-300 bg-white rounded-lg shadow-md">
-        <AnimatePresence mode="wait">
+    <div className="min-h-screen w-full py-20 overflow-y-auto text-white bg-[#101113]">
+      <div className="flex flex-col items-center space-y-20 px-4 max-w-[1000px] mx-auto">
+
+        <div className='flex justify-between items-center w-full'>
+
+          <div>
+           <h2 className="text-center text-3xl text-amber-400 font-semibold">All Projects</h2>
+          </div>
+
+          <div>
+            <select name="" id="" className='bg-[#101113] text-white p-2 rounded-md'>
+              <option value="">All</option>
+              <option value="">Web</option>
+              <option value="">Mobile</option>
+              <option value="">Extensoins</option>
+            </select>
+          </div>
+        </div>
+
+        {projects.map((project, i) => (
           <motion.div
-            key={projects[index].id}
-            initial={{ y: 300, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: -300, opacity: 0 }}
-            transition={{ duration: 0.5 }}
-            className="absolute top-0 left-0 w-full h-full p-6 flex flex-col items-center justify-center text-center"
+            key={project.id}
+            initial={{ opacity: 0.2, scale: 0.95, filter: 'blur(4px)', zIndex: 0 }}
+            whileInView={{
+              opacity: 1,
+              scale: 1,
+              filter: 'blur(0px)',
+              zIndex: 10, // Bring the card in focus to the front
+            }}
+            viewport={{ once: false, amount: 0.6 }}
+            transition={{ duration: 0.6 }}
+            className="w-full h-[250px] bg-amber-600 rounded-lg shadow-md p-6 flex items-center justify-between text-center relative"
           >
-            <img
-              src={projects[index].src}
-              alt={projects[index].title}
-              className="w-full h-48 object-cover rounded mb-4"
-            />
-            <h2 className="text-xl font-semibold">{projects[index].title}</h2>
-            <p className="text-gray-600 text-sm mt-2">{projects[index].description}</p>
-            <a
-              href={projects[index].link}
-              className="text-blue-500 underline mt-4"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Project
-            </a>
+            {/* This is for the image with a slight shadow to differentiate */}
+            <div className="relative w-[40%] h-48 mb-4 rounded overflow-hidden">
+              <Image
+                src={project.src}
+                alt={project.title}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 700px"
+              />
+            </div>
+            {/* This is the text content */}
+            <div className='w-2/4'>
+              <h2 className="text-xl font-semibold">{project.title}</h2>
+              <p className="text-gray-300 mt-2">{project.description}</p>
+              <a
+                href={project.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-4 text-amber-400 underline"
+              >
+                View Project
+              </a>
+            </div>
+            {/* Non-focused cards will have a blur effect, so they appear behind */}
+            {i !== 0 && (
+              <motion.div
+                // className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-50 rounded-lg z-0"
+                initial={{ opacity: 0.2 }}
+                whileInView={{ opacity: 0.2 }}
+                transition={{ duration: 0.6 }}
+              />
+            )}
           </motion.div>
-        </AnimatePresence>
+        ))}
+
+        <div className='relative group'>
+          <span
+            className="absolute left-0 top-1/2 -translate-y-1/2 h-[25px] w-[25px] bg-[#ffbb00e5] z-0 rounded-full transition-all duration-300 group-hover:w-full"
+          ></span>
+          <p className='z-10 px-3 py-1 relative'>Hire Me {"▷"}</p>
+        </div>
+
       </div>
 
-      <div className="mt-6 flex gap-4">
-        <button onClick={handlePrev} className="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400">
-          Prev
-        </button>
-        <button onClick={handleNext} className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
-          Next
-        </button>
-      </div>
     </div>
   )
 }

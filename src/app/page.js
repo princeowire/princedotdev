@@ -54,7 +54,7 @@ export default function Home() {
 
         <section className="max-w-[1000px] max-md:px-4 w-full py-4 pt-20 my-8">
 
-          <Image className="z-0 top-[-200px] right-0  w-[800px] h-[500px] absolute" src={blob} alt='blob' />
+          <Image className="top-[-200px] right-0  w-[800px] h-[500px] absolute z-30" src={blob} alt='blob' />
 
           <p>Hi there</p>
 
@@ -173,7 +173,7 @@ export default function Home() {
             <span
               className="absolute left-0 top-1/2 -translate-y-1/2 h-[25px] w-[25px] bg-[#ffbb00e5] z-0 rounded-full transition-all duration-300 group-hover:w-full"
             ></span>
-            <a href="" className='z-10 px-3 py-1 relative'>See More About Me {"▷"}</a>
+            <a href="about" className='z-10 px-3 py-1 relative'>See More About Me {"▷"}</a>
           </div>
 
         </section>
@@ -300,7 +300,7 @@ export default function Home() {
              <span
               className="absolute left-0 top-1/2 -translate-y-1/2 h-[25px] w-[25px] bg-[#ffbb00e5] z-0 rounded-full transition-all duration-300 group-hover:w-full"
             ></span>
-          <a href="" className='z-10 px-3 py-1 relative'>See All Projects {"▷"}</a>
+          <a href="projects" className='z-10 px-3 py-1 relative'>See All Projects {"▷"}</a>
          </div>
 
         </section>
