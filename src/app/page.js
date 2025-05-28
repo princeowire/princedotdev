@@ -22,7 +22,7 @@ import blueice from '../../public/asset/blueice.png';
 import euphoria from '../../public/asset/euphoria.png';
 
 import ContactForm from "@/components/contact-from/contact-form";
-import AvatarSection from "@/components/welcome/welcome";
+// import AvatarSection from "@/components/welcome/welcome";
 import Testimonail from "@/components/testimonail/testimonail";
 
 export default function Home() {
@@ -43,6 +43,7 @@ export default function Home() {
   const [typedText, setTypedText] = useState('');
   const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     let timeout;
@@ -70,8 +71,25 @@ export default function Home() {
     return () => clearTimeout(timeout);
   }, [typedText, isDeleting, currentTitleIndex]);
 
+  useEffect(() => {
+    // Simulate a loading delay (you can also use actual data loading here)
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 3000); // 2 seconds
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="w-screen h-screen flex items-center justify-center bg-black text-white text-xl">
+        Loading...
+      </div>
+    );
+  }
+
   return (
-    <div className="bg-[#101113] text-white">
+    <div className="bg-[#101113] text-white font-clash">
 
       <main className="flex items-center justify-center flex-col">
 
@@ -79,11 +97,11 @@ export default function Home() {
 
           <Image className="top-[-200px] right-0  w-[800px] h-[500px] absolute z-30" src={blob} alt='blob' />
 
-          <p>Hi there</p>
+          <p className="mb-2">Hi there</p>
 
           <h1 className="text-3xl">I&apos;m Prince Owire</h1>
 
-         <p className="font-bold text-white text-[45.6px] leading-[82.7px]">
+         <p className="font-bold text-white text-[45.6px] mt-2 mb-5">
             A FRONTEND {typedText}
             <span className="animate-blink">|</span>
           </p>
@@ -354,7 +372,6 @@ export default function Home() {
         </section>
 
       </main>
-
     </div>
   );
 }
