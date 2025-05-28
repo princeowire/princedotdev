@@ -5,7 +5,7 @@ import { FaCloudDownloadAlt } from "react-icons/fa";
 
 const page = () => {
   return (
-    <div className='bg-[#101113]'>
+    <div className='bg-[#101113] font-clash'>
 
       <div className="max-w-[1000px] mx-auto pt-16 flex flex-wrap-reverse max-sm:p-4">
 

@@ -20,6 +20,7 @@ import optiIcon from '../../public/asset/optimization.png';
 import prince from '../../public/asset/prince.jpg';
 import blueice from '../../public/asset/blueice.png';
 import euphoria from '../../public/asset/euphoria.png';
+import loader from '../../public/asset/loader.svg';
 
 import ContactForm from "@/components/contact-from/contact-form";
 // import AvatarSection from "@/components/welcome/welcome";
@@ -82,8 +83,8 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="w-screen h-screen flex items-center justify-center bg-black text-white text-xl">
-        Loading...
+      <div className="w-full h-screen flex items-center justify-center bg-black text-white text-xl">
+       <Image src={loader} alt="Loading..." className="w-28 h-20" />
       </div>
     );
   }
