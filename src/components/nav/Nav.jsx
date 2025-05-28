@@ -5,7 +5,7 @@ const Nav = () => {
   return (
     <nav className='py-2 bg-[#29282897] text-white flex items-center justify-center z-50 w-full fixed top-0'>
 
-      <div className='max-w-[1000px] w-full flex items-center justify-between'>
+      <div className='max-w-[1000px] w-full flex items-center justify-between max-md:px-4'>
 
         <a href="./">LOGO</a>
 
@@ -13,7 +13,7 @@ const Nav = () => {
           <Link href="/" >Home</Link>
           <Link href="projects" >Projects</Link>
           <Link href="about" >About</Link>
-          <Link href="" >blog</Link>
+          <Link href="" >Blog</Link>
         </div>
 
         <div className='relative group'>

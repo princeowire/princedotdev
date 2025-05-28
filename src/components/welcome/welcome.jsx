@@ -1,99 +1,70 @@
-'use client';
-
-import { Canvas, useFrame, useThree } from '@react-three/fiber';
-import { useRef, useState, useEffect } from 'react';
+// FlowerViewer.jsx
+import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
-function Avatar() {
-  const avatarRef = useRef();
-  const eyeLRef = useRef();
-  const eyeRRef = useRef();
-  const { camera, viewport } = useThree();
-
-  const [mousePos, setMousePos] = useState(new THREE.Vector2(0, 0));
-  const [isInside, setIsInside] = useState(true);
-  const targetPos = useRef(new THREE.Vector3());
+const FlowerViewer = () => {
+  const mountRef = useRef(null);
 
   useEffect(() => {
-    const section = document.getElementById('avatar-section');
+    // === Scene Setup ===
+    const scene = new THREE.Scene();
+    const width = mountRef.current.clientWidth;
+    const height = mountRef.current.clientHeight;
 
-    const handleMouseMove = (e) => {
-      const x = (e.clientX / window.innerWidth) * 2 - 1;
-      const y = -(e.clientY / window.innerHeight) * 2 + 1;
-      setMousePos(new THREE.Vector2(x, y));
+
+    scene.background = new THREE.Color(0x000000); // black background
+
+    const camera = new THREE.PerspectiveCamera(45, width / height, 0.1, 100);
+    camera.position.set(0, 1.5, 3);
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setSize(width, height);
+    mountRef.current.appendChild(renderer.domElement);
+
+    // === Lights ===
+    const light = new THREE.DirectionalLight(0xffffff, 1);
+    light.position.set(5, 10, 7.5);
+    scene.add(light);
+    scene.add(new THREE.AmbientLight(0x404040)); // soft light
+
+    // === Controls ===
+    const controls = new OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.enableZoom = false; // Prevent zoom so scroll passes through
+
+
+    // === Load Model ===
+    const loader = new GLTFLoader();
+    loader.load(
+    '/flowers.glb',
+    (gltf) => {
+      gltf.scene.scale.set(0.5, 0.5, 0.5); // 👈 Adjust size here (50% smaller)
+      scene.add(gltf.scene);
+    },
+    undefined,
+    (error) => {
+      console.error('Error loading model:', error);
+    }
+  );
+
+
+    // === Animate ===
+    const animate = () => {
+      requestAnimationFrame(animate);
+      controls.update();
+      renderer.render(scene, camera);
     };
+    animate();
 
-    const handleEnter = () => setIsInside(true);
-    const handleLeave = () => setIsInside(false);
-
-    window.addEventListener('mousemove', handleMouseMove);
-    section?.addEventListener('mouseenter', handleEnter);
-    section?.addEventListener('mouseleave', handleLeave);
-
+    // === Cleanup ===
     return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      section?.removeEventListener('mouseenter', handleEnter);
-      section?.removeEventListener('mouseleave', handleLeave);
+      mountRef.current.removeChild(renderer.domElement);
     };
   }, []);
 
-  useFrame(() => {
-    if (!avatarRef.current) return;
+  return <div ref={mountRef} style={{ width: '100%', height: '500px' }} />;
+};
 
-    // Convert 2D mouse to 3D world position
-    const vector = new THREE.Vector3(mousePos.x, mousePos.y, 0.5).unproject(camera);
-    const avatar = avatarRef.current;
-
-    if (isInside) {
-      avatar.lookAt(vector);
-
-      // Eyes track cursor
-      eyeLRef.current?.lookAt(vector);
-      eyeRRef.current?.lookAt(vector);
-    } else {
-      // Move avatar towards last known vector in 3D
-      targetPos.current.lerp(vector, 0.05);
-      avatar.position.lerp(targetPos.current, 0.05);
-    }
-  });
-
-  return (
-    <group ref={avatarRef} position={[0, 0, 0]}>
-      {/* Head */}
-      <mesh>
-        <sphereGeometry args={[1, 32, 32]} />
-        <meshStandardMaterial color="orange" />
-      </mesh>
-
-      {/* Eyes */}
-      <mesh ref={eyeLRef} position={[-0.4, 0.3, 0.9]}>
-        <sphereGeometry args={[0.1, 16, 16]} />
-        <meshStandardMaterial color="white" />
-      </mesh>
-      <mesh ref={eyeRRef} position={[0.4, 0.3, 0.9]}>
-        <sphereGeometry args={[0.1, 16, 16]} />
-        <meshStandardMaterial color="white" />
-      </mesh>
-    </group>
-  );
-}
-
-function Lights() {
-  return (
-    <>
-      <ambientLight intensity={0.4} />
-      <directionalLight position={[5, 5, 5]} intensity={1} />
-    </>
-  );
-}
-
-export default function AvatarSection() {
-  return (
-    <section id="avatar-section" className="h-screen w-full bg-black">
-      {/* <Canvas camera={{ position: [0, 0, 5], fov: 75 }}>
-        <Lights />
-        <Avatar />
-      </Canvas> */}
-    </section>
-  );
-}
+export default FlowerViewer;

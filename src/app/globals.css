@@ -26,3 +26,38 @@
 .marquee {
   animation: marquee 30s linear infinite;
 }
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+.animate-blink {
+  display: inline-block;
+  animation: blink 1s step-start infinite;
+}
+
+.zee {
+  z-index: 3;
+}
+
+.testimonial-swiper .swiper-pagination-bullet {
+  background-color: #ff6f00 !important; /* dark yellow */
+  opacity: 0.5;
+}
+
+.testimonial-swiper .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #fbbf24 !important; /* bright yellow */
+  opacity: 1;
+}
+
+.testimonial-swiper .swiper-button-prev,
+.testimonial-swiper .swiper-button-next {
+  color: #fbbf24 !important;
+}
+
+
+

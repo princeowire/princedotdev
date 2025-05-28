@@ -4,9 +4,10 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import blueice from '../../../public/asset/blueice.png'
 import euphoria from '../../../public/asset/euphoria.png'
+import linkArrow from "../../../public/asset/link-arrow.svg";
 
 const projects = [
-  { id: 1, title: "Euphoria", description: "E-commerce with Next.js.", link: "#", src: euphoria },
+  { id: 1, title: "Euphoria", description: "E-commerce with Next.js.", link: "#", stack: "javaScript", src: euphoria },
   { id: 2, title: "Blue Ice", description: "Cool theme.", link: "#", src: blueice },
   { id: 3, title: "CommerceX", description: "Real-time analytics.", link: "#", src: euphoria },
   { id: 4, title: "Frost UI", description: "Component library.", link: "#", src: blueice },
@@ -47,7 +48,7 @@ const Page = () => {
             }}
             viewport={{ once: false, amount: 0.6 }}
             transition={{ duration: 0.6 }}
-            className="w-full h-[250px] bg-amber-600 rounded-lg shadow-md p-6 flex items-center justify-between text-center relative"
+            className="w-full h-[250px] bg-amber-600 rounded-lg shadow-md p-6 flex gap-4 items-center justify-between text-center relative"
           >
             {/* This is for the image with a slight shadow to differentiate */}
             <div className="relative w-[40%] h-48 mb-4 rounded overflow-hidden">
@@ -60,17 +61,16 @@ const Page = () => {
               />
             </div>
             {/* This is the text content */}
-            <div className='w-2/4'>
+            <div className='flex items-baseline  w-[56%] flex-col'>
               <h2 className="text-xl font-semibold">{project.title}</h2>
               <p className="text-gray-300 mt-2">{project.description}</p>
-              <a
-                href={project.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-block mt-4 text-amber-400 underline"
-              >
-                View Project
+
+              <a className="absolute top-0 right-0 m-2 rounded-full bg-[#ffbb00e5]" href={project.link} target="_blank">
+                <Image className="w-[50px]" src={linkArrow} alt={project.title} />
               </a>
+
+              <button>{project.stack}</button>
+
             </div>
             {/* Non-focused cards will have a blur effect, so they appear behind */}
             {i !== 0 && (

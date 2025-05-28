@@ -52,7 +52,7 @@ const ContactForm = () => {
       
     >
       {({ isSubmitting }) => (
-        <Form className="shadow-[0px_0px_05px_05px] border-amber-400 p-8 bg-[#1E1E1E] rounded-bl-2xl rounded-tr-2xl shadow-[#ffbb005a]">
+        <Form className="shadow-[0px_0px_05px_05px] border-amber-400 p-8 max-sm:p-4 bg-[#1E1E1E] rounded-bl-2xl rounded-tr-2xl shadow-[#ffbb005a]">
           <div className="py-8 flex flex-wrap gap-y-16 w-full justify-between">
             <label className="basis-[43.5%] max-sm:basis-[100%] w-full">
               <p>First name:</p>
@@ -72,14 +72,14 @@ const ContactForm = () => {
               <ErrorMessage name="email" component="div" className="text-red-400 text-sm" />
             </label>
 
-            <label className="basis-[43.5%] max-sm:basis-[100%} w-full">
+            <label className="basis-[43.5%] max-sm:basis-[100%] w-full">
               <p>Message:</p>
               <Field as="textarea" name="message" rows="4" className="border-b border-amber-400 w-full outline-0 bg-amber-200 text-black p-2.5" />
               <ErrorMessage name="message" component="div" className="text-red-400 text-sm" />
             </label>
           </div>
 
-          <div className="pt-16 flex items-center justify-between">
+          <div className="pt-16 max-sm:pt-8 flex gap-4 items-center justify-between">
             <button
               type="submit"
               disabled={isSubmitting}

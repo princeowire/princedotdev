@@ -23,6 +23,7 @@ import euphoria from '../../public/asset/euphoria.png';
 
 import ContactForm from "@/components/contact-from/contact-form";
 import AvatarSection from "@/components/welcome/welcome";
+import Testimonail from "@/components/testimonail/testimonail";
 
 export default function Home() {
   const projectData = [
@@ -33,19 +34,41 @@ export default function Home() {
 
   ]
   const colors = ["bg-fuchsia-800", "bg-blue-800", "bg-cyan-800", "bg-emerald-800", "bg-pink-800", "bg-violet-800"];
-  const cardRef = useRef([]);
   const [showMore, setShowMore] = useState(false);
 
-  useEffect(() => {
-    let angle = (cardRef.current.length - 1) * 10;
+  const titles = ['DEVELOPER', 'ENGINEER'];
+  const typingSpeed = 150;
+  const pauseTime = 1500;
 
-    cardRef.current.forEach((card) => {
-      if (card) {
-        card.style.transform = `rotate(${angle}deg)`;
-        angle -= 10;
+  const [typedText, setTypedText] = useState('');
+  const [currentTitleIndex, setCurrentTitleIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+
+  useEffect(() => {
+    let timeout;
+    const currentText = titles[currentTitleIndex];
+    if (!isDeleting) {
+      if (typedText.length < currentText.length) {
+        timeout = setTimeout(() => {
+          setTypedText(currentText.slice(0, typedText.length + 1));
+        }, typingSpeed);
+      } else {
+        timeout = setTimeout(() => {
+          setIsDeleting(true);
+        }, pauseTime);
       }
-    });
-  }, []);
+    } else {
+      if (typedText.length > 0) {
+        timeout = setTimeout(() => {
+          setTypedText(currentText.slice(0, typedText.length - 1));
+        }, typingSpeed / 2);
+      } else {
+        setIsDeleting(false);
+        setCurrentTitleIndex((prev) => (prev + 1) % titles.length);
+      }
+    }
+    return () => clearTimeout(timeout);
+  }, [typedText, isDeleting, currentTitleIndex]);
 
   return (
     <div className="bg-[#101113] text-white">
@@ -60,9 +83,11 @@ export default function Home() {
 
           <h1 className="text-3xl">I&apos;m Prince Owire</h1>
 
-          <p className="font-bold text-white text-[45.6px] leading-[82.7px]">
-            A FRONTEND DEVELOPER
+         <p className="font-bold text-white text-[45.6px] leading-[82.7px]">
+            A FRONTEND {typedText}
+            <span className="animate-blink">|</span>
           </p>
+
 
           <p className="max-w-[500px] mb-4 text-sm"> Improving website speed, search engine optimization, and accessibility Optimizing images, lazy loading, and efficient state management Enhancing performance using Next.js (SSG, ISR, etc.)</p>
 
@@ -88,15 +113,15 @@ export default function Home() {
 
         </section>
 
-        <section className="bg-amber-400 w-full flex items-center justify-center my-8">
+        {/* <section className="bg-amber-400 w-full flex items-center justify-center my-8">
 
-          <div className="max-w-[1000px] max-md:px-4 w-full h-screen flex-wrap flex justify-center items-center">
+          <div className="max-w-[1000px] max-md:px-4 w-full flex-wrap flex justify-center items-center">
 
             <AvatarSection />
 
           </div>
 
-        </section>
+        </section> */}
 
         <section className="max-w-[1000px] max-md:px-4 w-full my-8">
 
@@ -255,7 +280,7 @@ export default function Home() {
                     <div className="absolute top-0 left-0 w-full h-full bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 flex flex-col justify-end p-4 text-white rounded-2xl">
 
                       <a className="absolute top-0 right-0 m-2 rounded-full bg-[#ffbb00e5]" href={project.link} target="_blank">
-                        <Image className="w-[50px]" src={linkArrow}/>
+                        <Image className="w-[50px]" src={linkArrow} alt={project.title} />
                       </a>
 
                     <div className="text-left mt-auto">
@@ -302,6 +327,14 @@ export default function Home() {
             ></span>
           <a href="projects" className='z-10 px-3 py-1 relative'>See All Projects {"▷"}</a>
          </div>
+
+        </section>
+
+        <section className="testimonial">
+         <div className="max-w-[1000px] max-md:px-4 w-full flex flex-col items-center justify-center relative my-16">
+           <Testimonail />
+          </div>
+
 
         </section>
 
