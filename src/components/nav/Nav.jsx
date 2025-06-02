@@ -5,11 +5,11 @@ const Nav = () => {
   return (
     <nav className='py-2 bg-[#29282897] text-white flex items-center justify-center z-50 w-full fixed top-0'>
 
-      <div className='max-w-[1000px] w-full flex items-center justify-between max-md:px-4'>
+      <div className='max-w-[1000px] w-full flex items-center justify-between max-lg:px-4'>
 
         <a href="./">LOGO</a>
 
-        <div className='flex gap-5'>
+        <div className='flex gap-5 links max-md:hidden'>
           <Link href="/" >Home</Link>
           <Link href="projects" >Projects</Link>
           <Link href="about" >About</Link>

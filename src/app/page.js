@@ -83,7 +83,7 @@ export default function Home() {
 
   if (loading) {
     return (
-      <div className="w-full h-screen flex items-center justify-center bg-black text-white text-xl">
+      <div className="absolute w-full h-screen flex items-center justify-center bg-black text-white text-xl z-50">
        <Image src={loader} alt="Loading..." className="w-28 h-20" />
       </div>
     );
@@ -94,7 +94,7 @@ export default function Home() {
 
       <main className="flex items-center justify-center flex-col">
 
-        <section className="max-w-[1000px] max-md:px-4 w-full py-4 pt-20 my-8">
+        <section className="max-w-[1000px] max-lg:px-4 w-full py-4 pt-20 my-8">
 
           <Image className="top-[-200px] right-0  w-[800px] h-[500px] absolute z-30" src={blob} alt='blob' />
 
@@ -102,7 +102,7 @@ export default function Home() {
 
           <h1 className="text-3xl">I&apos;m Prince Owire</h1>
 
-         <p className="font-bold text-white text-[45.6px] mt-2 mb-5">
+         <p className="font-bold text-white text-[45.6px] mt-2 mb-5 max-sm:max-w-[300px]">
             A FRONTEND {typedText}
             <span className="animate-blink">|</span>
           </p>
@@ -142,7 +142,7 @@ export default function Home() {
 
         </section> */}
 
-        <section className="max-w-[1000px] max-md:px-4 w-full my-8">
+        <section className="max-w-[1000px] max-lg:px-4 w-full my-8">
 
           <div className="flex items-center justify-between flex-wrap max-md:gap-28 py-8">
             <div className="basis-1/3 max-md:basis-full">
@@ -240,7 +240,7 @@ export default function Home() {
 
           <p className="text-center text-[40px] absolute right-0 max-md:right-[-55px] rotate-90 font-bold text-[#232020]">SERVICES</p>
 
-          <div className="max-w-[1000px] max-md:px-4 max-md:justify-center w-full gap-4 max-md:flex-wrap flex items-center justify-between py-8 relative">
+          <div className="max-w-[1000px] max-lg:px-4 max-md:justify-center w-full gap-4 max-md:flex-wrap flex items-center justify-between py-8 relative">
 
 
             <div className="max-w-[280px] bg-[#1E1E1E] p-4 rounded-3xl">
@@ -290,7 +290,7 @@ export default function Home() {
 
           <h2 className="text-center pb-8 text-3xl text-amber-400 font-semibold">Projects</h2>
 
-          <div className="max-w-[1000px] max-md:px-4 w-full flex flex-wrap gap-4 justify-between">
+          <div className="max-w-[1000px] max-lg:px-4 w-full flex flex-wrap gap-4 justify-between">
 
             {projectData.map((project) => (
                 <div className={`flex flex-col grow shrink-0 w-full bg-[#1E1E1E] p-2 rounded-3xl ${project.style}`}  key={project.id}>
@@ -350,14 +350,14 @@ export default function Home() {
         </section>
 
         <section className="testimonial">
-         <div className="max-w-[1000px] max-md:px-4 w-full flex flex-col items-center justify-center relative my-16">
+         <div className="">
            <Testimonail />
           </div>
 
 
         </section>
 
-        <section className="conatct max-w-[1000px] max-md:px-4 my-8">
+        <section className="conatct max-w-[1000px] max-lg:px-4 my-8">
           <h2 className="text-center pb-8 text-3xl text-amber-400 font-semibold">Contact Me</h2>
 
           <div className="relative w-full p-4">

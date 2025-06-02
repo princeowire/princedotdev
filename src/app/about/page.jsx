@@ -7,7 +7,7 @@ const page = () => {
   return (
     <div className='bg-[#101113] font-clash'>
 
-      <div className="max-w-[1000px] mx-auto pt-16 flex flex-wrap-reverse max-sm:p-4">
+      <div className="max-w-[1000px] mx-auto pt-16 flex flex-wrap-reverse max-lg:p-4">
 
       <div className='w-1/2 max-md:w-full'>
         <Image src={aboutPrince} alt='me' />
