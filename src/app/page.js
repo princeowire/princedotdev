@@ -156,9 +156,9 @@ export default function Home() {
               </div>
 
               <div className="flex items-center justify-between mt-14">
-                <div className="w-[40px] h-[40px] flex justify-center items-center border-2 border-amber-800 rounded-full m-1"><p>◁</p></div>
+                <button className="w-[40px] h-[40px] flex justify-center items-center border-2 border-amber-800 rounded-full m-1"><p>◁</p></button>
                 <Image src={certificate} alt="certificate" className="w-[calc(100%-108px)]" />
-                <div className="w-[40px] h-[40px] flex justify-center items-center border-2 border-amber-800 rounded-full m-1"><p>▷</p></div>
+                <button className="w-[40px] h-[40px] flex justify-center items-center border-2 border-amber-800 rounded-full m-1"><p>▷</p></button>
               </div>
 
               <div className="sticker flex items-center justify-center">
@@ -209,7 +209,8 @@ export default function Home() {
 
                 <p className="caligraphy text-center mt-14 font-light">Wacthing Anime</p>
                 <p className="caligraphy text-center font-light my-2">Listening to music</p>
-                <p className="caligraphy text-center font-light">Playing Table tennis</p>
+                <p className="caligraphy text-center font-light my-2">Playing Table tennis</p>
+                <p className="caligraphy text-center font-light">Photography</p>
 
               </div>
 
@@ -299,7 +300,7 @@ export default function Home() {
                 <div className={`flex flex-col grow shrink-0 w-full bg-[#1E1E1E] p-2 rounded-3xl ${project.style}`}  key={project.id}>
 
                   <div className="relative group">
-                    <div className="absolute top-0 left-0 w-full h-full bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10 flex flex-col justify-end p-4 text-white rounded-2xl">
+                    <div className="absolute top-0 left-0 w-full h-full bg-black/70 opacity-0 group-hover:opacity-100 max-md:opacity-100 transition-opacity duration-200 z-10 flex flex-col justify-end p-4 text-white rounded-2xl">
 
                       <a className="absolute top-0 right-0 m-2 rounded-full bg-[#ffbb00e5]" href={project.link} target="_blank">
                         <Image className="w-[50px]" src={linkArrow} alt={project.title} />
