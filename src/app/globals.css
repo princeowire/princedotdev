@@ -62,6 +62,27 @@
 .testimonial-swiper .swiper-button-next {
   color: #fbbf24 !important;
 }
+/* WebKit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px;
+}
 
+::-webkit-scrollbar-track {
+  background: black;
+  border-radius: 10px;
+}
 
+::-webkit-scrollbar-thumb {
+  background-color: #fbbf24;
+  border-radius: 10px;
+}
 
+::-webkit-scrollbar-thumb:hover {
+  background-color: #f59e0b;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #fbbf24 black;
+}

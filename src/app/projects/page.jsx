@@ -7,14 +7,16 @@ import euphoria from '../../../public/asset/euphoria.png'
 import linkArrow from "../../../public/asset/link-arrow.svg";
 import githubIcon from "../../../public/asset/github-icon.png";
 import onet from '../../../public/asset/onet.png'
+import bigDog from '../../../public/asset/bigdog.png' 
+import futureRide from '../../../public/asset/future-ride.png'
 
 const projects = [
-  { id: 1, title: "Euphoria", description: "Euphoria is a sleek, responsive e-commerce platform built with Next.js and Tailwind CSS. It delivers a seamless shopping experience with a clean UI, fast performance, and dynamic content rendering. Designed for fashion, lifestyle, or retail brands, Euphoria focuses on both functionality and aesthetics.", link: "https://euphoria-next-eight.vercel.app/", stack: "JavaScript NextJS Tailwind", src: euphoria, github: "https://github.com/princeowire/euphoria-next" },
-  { id: 2, title: "Blue Ice", description: "Built with semantic HTML5, custom CSS, and vanilla JavaScript. The site is fully responsive, features scroll-based navigation, and uses Flexbox for layout. Focused on performance, clean structure, and a mobile-first approach—without relying on frameworks or external libraries.", link: "https://blueice-bay.vercel.app/", src: blueice, stack: "JavaScript HTML CSS", github: "https://github.com/princeowire/blueice"},
-  { id: 3, title: "Onet", description: "Onet is ", link: "https://onet-sage.vercel.app/", src: onet, stack: "JavaScript ReactJS Tailwind", github: "https://github.com/princeowire/onet" },
-  { id: 4, title: "Frost UI", description: "Component library.", link: "#", src: blueice, github: "https://github.com/princeowire/euphoria-next" },
-  { id: 5, title: "WaveTrack", description: "Music player.", link: "#", src: euphoria, github: "https://github.com/princeowire/euphoria-next" },
-  { id: 6, title: "PixelPush", description: "Graphic tool.", link: "#", src: blueice, github: "https://github.com/princeowire/euphoria-next" },
+  { id: 1, tag: "WEB", title: "Future Ride", description: "This project features a clean, modern design focused on delivering a smooth and intuitive user experience. The interface is thoughtfully crafted to be visually appealing and easy to navigate, ensuring visitors engage effortlessly with the content. Attention to detail in layout and styling creates a professional and inviting atmosphere that enhances usability and encourages interaction.", link: "https://future-ride-nine.vercel.app/", src: futureRide, stack: "JavaScript ReactJS SCSS", github: "https://github.com/princeowire/future-ride" },
+  { id: 2, tag: "WEB", title: "Blue Ice", description: "Built with semantic HTML5, custom CSS, and vanilla JavaScript. The site is fully responsive, features scroll-based navigation, and uses Flexbox for layout. Focused on performance, clean structure, and a mobile-first approach—without relying on frameworks or external libraries.", link: "https://blueice-bay.vercel.app/", src: blueice, stack: "JavaScript HTML CSS", github: "https://github.com/princeowire/blueice"},
+  { id: 3, tag: "WEB", title: "Onet", description: "Onet is ", link: "https://onet-sage.vercel.app/", src: onet, stack: "JavaScript ReactJS Tailwind", github: "https://github.com/princeowire/onet" },
+  { id: 4, tag: "WEB", title: "Euphoria", description: "Euphoria is a sleek, responsive e-commerce platform built with Next.js and Tailwind CSS. It delivers a seamless shopping experience with a clean UI, fast performance, and dynamic content rendering. Designed for fashion, lifestyle, or retail brands, Euphoria focuses on both functionality and aesthetics.", link: "https://euphoria-next-eight.vercel.app/", stack: "JavaScript NextJS Tailwind", src: euphoria, github: "https://github.com/princeowire/euphoria-next" },
+  { id: 5, tag: "WEB", title: "Doug the Poug (Replica)", description: "Music player.", link: "#", src: bigDog, stack: "JavaScript ReactJS Tailwind", github: "https://github.com/princeowire/bigdog" },
+  { id: 6, tag: "WEB", title: "PixelPush", description: "Graphic tool.", link: "#", src: blueice, github: "https://github.com/princeowire/euphoria-next" },
 ]
 
 const Page = () => {
@@ -64,7 +66,7 @@ const Page = () => {
             </div>
             {/* This is the text content */}
             <div className='flex items-baseline  w-[56%] max-sm:w-full flex-col'>
-              <h2 className="text-xl font-semibold">{project.title}</h2>
+              <h2 className="text-xl font-semibold">{project.title} <em className='text-sm rotate-45 decoration-0 bg-amber-700'>{project.tag}</em></h2>
               <p className="text-gray-300 text-sm mt-2 text-left">{project.description}</p>
 
               <a className="absolute top-0 right-0 m-2 rounded bg-[#ffffffb5]" href={project.link} target="_blank">
@@ -77,7 +79,7 @@ const Page = () => {
 
               <div className="mt-2">
                 {project.stack?.split(' ').map((word, index) => (
-                  <span key={index} className="inline-block mr-2 border-amber-400 border-2 px-2 py-1 rounded">{word}</span>
+                  <button key={index} className="inline-block mr-2 border-amber-400 border-2 px-2 py-1 rounded">{word}</button>
                 ))}
 
               </div>
