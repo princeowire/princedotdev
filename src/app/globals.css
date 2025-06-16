@@ -84,5 +84,10 @@
 /* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #fbbf24 black;
+  scrollbar-color: #fbbf24 #101113;
+}
+
+
+a {
+  cursor: pointer;
 }

@@ -302,9 +302,9 @@ export default function Home() {
                   <div className="relative group">
                     <div className="absolute top-0 left-0 w-full h-full bg-black/70 opacity-0 group-hover:opacity-100 max-md:opacity-100 transition-opacity duration-200 z-10 flex flex-col justify-end p-4 text-white rounded-2xl">
 
-                      <a className="absolute top-0 right-0 m-2 rounded-full bg-[#ffbb00e5]" href={project.link} target="_blank">
-                        <Image className="w-[50px]" src={linkArrow} alt={project.title} />
-                      </a>
+                    <a className="absolute top-0 right-0 m-2 rounded-full bg-[#ffbb00e5]" href={project.link} target="_blank">
+                      <Image className="w-[50px]" src={linkArrow} alt={project.title} />
+                    </a>
 
                     <div className="text-left mt-auto">
                       <h3 className="text-2xl mb-2">{project.title}</h3>
