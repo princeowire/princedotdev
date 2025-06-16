@@ -265,9 +265,7 @@ export default function Home() {
 
               <div className="pt-7">
                 <h2 className="text-xl pb-2">Top Noutch Social & Team Managing Skills </h2>
-                <p className="text-xs text-gray-300">Improving website speed, search engine optimization, and accessibility
-                  Optimizing images, lazy loading, and efficient state management
-                  Enhancing performance using Next.js (SSG, ISR, etc.)</p>
+                <p className="text-xs text-gray-300">I enjoy working in teams because I believe good collaboration brings out the best in everyone. I contribute by listening actively, being accountable, and making sure I communicate clearly so the team stays aligned</p>
               </div>
 
             </div>
