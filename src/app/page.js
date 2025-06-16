@@ -28,6 +28,7 @@ import futureRide from '../../public/asset/future-ride.png'
 import ContactForm from "@/components/contact-from/contact-form";
 // import AvatarSection from "@/components/welcome/welcome";
 import Testimonail from "@/components/testimonail/testimonail";
+import Test from "@/components/testimonail/test";
 
 export default function Home() {
   const projectData = [
@@ -355,7 +356,8 @@ export default function Home() {
 
         <section className="testimonial">
          <div className="">
-           <Testimonail />
+           {/* <Testimonail /> */}
+           <Test />
           </div>
 
 
