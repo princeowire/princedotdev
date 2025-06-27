@@ -32,9 +32,9 @@ import Test from "@/components/testimonail/test";
 
 export default function Home() {
   const projectData = [
-    {id: 1, title: "Euphoria", description: "Project description: Euphoria is a sleek, responsive e-commerce platform built with Next.js and Tailwind CSS. It delivers a seamless shopping experience with a clean UI, fast performance, and dynamic content rendering. Designed for fashion, lifestyle, or retail brands, Euphoria focuses on both functionality and aesthetics.", link: "google.com", style: "basis-[25%] min-w-[250px]", details: "hello vbibvluib", src: euphoria, },
-    {id: 3, title: "Blueice", description: "Project description: Built with semantic HTML5, CSS, and vanilla JavaScript. The site is fully responsive, features scroll-based navigation, and uses Flexbox for layout. Focused on performance, clean structure, and a mobile-first approach—without relying on frameworks or external libraries.", link: "https://euphoria-next-eight.vercel.app/", style: "basis-[60%] min-w-[250px]", details: "hello vbibvluib", src: blueice, },
-    {id: 2, title: "Future Ride", description: "Project description: This project features a clean, modern design focused on delivering a smooth and intuitive user experience. The interface is thoughtfully crafted to be visually appealing and easy to navigate, ensuring visitors engage effortlessly with the content. Attention to detail in layout and styling creates a professional and inviting atmosphere that enhances usability and encourages interaction.", link: "google.com", style: "basis-[60%] min-w-[250px]", details: "hello vbibvluib", src: futureRide, },
+    {id: 1, title: "Euphoria", description: "Project description: Euphoria is a sleek, responsive e-commerce platform built with Next.js and Tailwind CSS. It delivers a seamless shopping experience with a clean UI, fast performance, and dynamic content rendering. Designed for fashion, lifestyle, or retail brands, Euphoria focuses on both functionality and aesthetics.", link: "https://euphoria-next-eight.vercel.app/", style: "basis-[25%] min-w-[250px]", details: "hello vbibvluib", src: euphoria, },
+    {id: 3, title: "Blueice", description: "Project description: Built with semantic HTML5, CSS, and vanilla JavaScript. The site is fully responsive, features scroll-based navigation, and uses Flexbox for layout. Focused on performance, clean structure, and a mobile-first approach—without relying on frameworks or external libraries.", link: "https://blueice-bay.vercel.app/", style: "basis-[60%] min-w-[250px]", details: "hello vbibvluib", src: blueice, },
+    {id: 2, title: "Future Ride", description: "Project description: This project features a clean, modern design focused on delivering a smooth and intuitive user experience. The interface is thoughtfully crafted to be visually appealing and easy to navigate, ensuring visitors engage effortlessly with the content. Attention to detail in layout and styling creates a professional and inviting atmosphere that enhances usability and encourages interaction.", link: "https://future-ride-nine.vercel.app/", style: "basis-[60%] min-w-[250px]", details: "hello vbibvluib", src: futureRide, },
     {id: 4, title: "Doug the poug (Replica)", description: "Project description: I Led the entire frontend development, from design to deployment. I focused on crafting a bold user interface, implementing smooth animation logic using JavaScript, and ensuring mobile-first responsiveness. The styling and component system were all built from scratch using Tailwind CSS, with attention to detail and consistency.", link: "https://bigdog-flame.vercel.app/", style: "basis-[25%] min-w-[250px]", details: "hello vbibvluib", src: bigDog, },
   ]
   const colors = ["bg-fuchsia-800", "bg-blue-800", "bg-cyan-800", "bg-emerald-800", "bg-pink-800", "bg-violet-800"];
@@ -106,7 +106,7 @@ export default function Home() {
           <h1 className="text-3xl">I&apos;m Prince Owire</h1>
 
          <p className="font-bold text-white text-[45.6px] mt-2 mb-5 max-sm:max-w-[300px]">
-            A FRONTEND {typedText}
+            A FRONTEND <div className="hidden max-sm:block"></div>  {typedText}
             <span className="animate-blink">|</span>
           </p>
 
@@ -360,10 +360,10 @@ export default function Home() {
 
         </section>
 
-        <section className="conatct max-w-[1000px] max-lg:px-4 my-8">
+        <section className="conatct max-w-[1000px] px-4 my-8">
           <h2 className="text-center pb-8 text-3xl text-amber-400 font-semibold">Contact Me</h2>
 
-          <div className="relative w-full p-4">
+          <div className="relative w-full p-4 max-sm:p-2">
 
             <div className="absolute top-0 left-0 w-10 h-10 border-t-2 border-l-2 border-amber-400"></div>
 

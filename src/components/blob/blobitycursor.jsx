@@ -31,7 +31,7 @@ export default function BlobityCursor() {
 
       // Focus behavior
       focusableElements:
-        "[data-blobity], button:not([data-no-blobity]), [data-blobity-tooltip]",
+        "[data-blobity], button:not([data-no-blobity]), #prince:not([data-no-blobity]), [data-blobity-tooltip]",
       focusableElementsOffsetX: 4,
       focusableElementsOffsetY: 4,
 

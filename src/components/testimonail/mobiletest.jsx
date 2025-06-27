@@ -39,7 +39,7 @@ const testimonials = [
 
 export default function MobileTestimonial() {
   return (
-    <div className="max-w-screen w-full py-8">
+    <div className="res w-full py-8">
       <h2 className="text-center text-2xl sm:text-3xl text-amber-400 font-semibold mb-6">Testimonials</h2>
 
       <Swiper
@@ -57,8 +57,8 @@ export default function MobileTestimonial() {
       >
         {testimonials.map((testimonial) => (
           <SwiperSlide key={testimonial.id} className='w-full'>
-            <div className="mx-auto flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 bg-gray-800 sm:p-10 rounded-lg shadow-md">
-              <div className="relative w-[140px] h-[140px] sm:w-[200px] sm:h-[200px] shrink-0">
+            <div className="mx-auto flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 bg-gray-800 sm:p-10 rounded-lg shadow-md py-8">
+              <div className="relative w-[140px] h-[140px] shrink-0">
                 <div className="absolute inset-0 bg-amber-400 rounded-full -top-4 -left-4 sm:-top-5 sm:-left-5 z-0" />
                 <div className="relative z-10 w-full h-full">
                   <Image

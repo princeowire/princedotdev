@@ -52,7 +52,7 @@ const ContactForm = () => {
       
     >
       {({ isSubmitting }) => (
-        <Form className="shadow-[0px_0px_05px_05px] border-amber-400 p-8 max-sm:p-4 bg-[#1E1E1E] rounded-bl-2xl rounded-tr-2xl shadow-[#ffbb005a]">
+        <Form className="shadow-[0px_0px_05px_05px] border-amber-400 p-8 max-sm:p-4 bg-[#1E1E1E] rounded-bl-2xl rounded-tr-2xl shadow-[#ffbb005a] w-full">
           <div className="py-8 flex flex-wrap gap-y-16 w-full justify-between">
             <label className="basis-[43.5%] max-sm:basis-[100%] w-full">
               <p>First name:</p>
@@ -87,7 +87,7 @@ const ContactForm = () => {
             >
               {isSubmitting ? 'Sending...' : 'Submit'}
             </button>
-            <div className="flex gap-4">
+            <div className="flex gap-4 max-sm:gap-2">
               <a href="https://www.linkedin.com/in/prince-owire-841187250/" target="_blank"><CiLinkedin className="w-6 h-6" /></a>
               <a href="https://github.com/princeowire" target="_blank"><FaGithub className="w-6 h-6" /></a>
               <a href="https://x.com/OwirePrince" target="_blank"><CiTwitter className="w-6 h-6" /></a>
