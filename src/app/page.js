@@ -37,6 +37,29 @@ export default function Home() {
     {id: 2, title: "Future Ride", description: "Project description: This project features a clean, modern design focused on delivering a smooth and intuitive user experience. The interface is thoughtfully crafted to be visually appealing and easy to navigate, ensuring visitors engage effortlessly with the content. Attention to detail in layout and styling creates a professional and inviting atmosphere that enhances usability and encourages interaction.", link: "https://future-ride-nine.vercel.app/", style: "basis-[60%] min-w-[250px]", details: "hello vbibvluib", src: futureRide, },
     {id: 4, title: "Doug the poug (Replica)", description: "Project description: I Led the entire frontend development, from design to deployment. I focused on crafting a bold user interface, implementing smooth animation logic using JavaScript, and ensuring mobile-first responsiveness. The styling and component system were all built from scratch using Tailwind CSS, with attention to detail and consistency.", link: "https://bigdog-flame.vercel.app/", style: "basis-[25%] min-w-[250px]", details: "hello vbibvluib", src: bigDog, },
   ]
+
+  const marData = [
+    { id: 1, title: "Git", logoImg: "", link: "https://onet-sage.vercel.app/" },
+    { id: 2, title: "ReactJS", logoImg: "", link: "https://onet-sage.vercel.app/" },
+    { id: 3, title: "Tailwind", logoImg: "", link: "https://onet-sage.vercel.app/" },
+    { id: 4, title: "SASS", logoImg: "", link: "https://onet-sage.vercel.app/" },
+    { id: 5, title: "VSCode", logoImg: "", link: "https://onet-sage.vercel.app/" },
+    { id: 6, title: "TypeScript", logoImg: "", link: "https://onet-sage.vercel.app/" },
+    { id: 7, title: "Figma", logoImg: "", link: "https://onet-sage.vercel.app/" },
+    { id: 8, title: "GitHub", logoImg: "", link: "https://onet-sage.vercel.app/" },
+    { id: 9, title: "Firebase", logoImg: "", link: "https://onet-sage.vercel.app/" },
+    { id: 10, title: "payStack", logoImg: "", link: "https://onet-sage.vercel.app/" },
+    { id: 11, title: "Stripe", logoImg: "", link: "https://onet-sage.vercel.app/" },
+    { id: 12, title: "ThreeJs", logoImg: "", link: "https://onet-sage.vercel.app/" },
+    { id: 13, title: "NextJs", logoImg: "", link: "https://onet-sage.vercel.app/" },
+    { id: 14, title: "Responsive Design", logoImg: "", link: "https://onet-sage.vercel.app/" },
+    { id: 15, title: "Vue Js", logoImg: "", link: "https://onet-sage.vercel.app/" },
+    { id: 16, title: "Free Code Camp", logoImg: "", link: "https://onet-sage.vercel.app/" },
+    { id: 17, title: "Framer Motion", logoImg: "", link: "https://onet-sage.vercel.app/" },
+  ]
+
+  const multiplier = 3;
+
   const colors = ["bg-fuchsia-800", "bg-blue-800", "bg-cyan-800", "bg-emerald-800", "bg-pink-800", "bg-violet-800"];
   const [showMore, setShowMore] = useState(false);
 
@@ -84,6 +107,7 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
+
   if (loading) {
     return (
       <div className="absolute w-full h-screen flex items-center justify-center bg-black text-white text-xl z-50">
@@ -91,6 +115,7 @@ export default function Home() {
       </div>
     );
   }
+
 
   return (
     <div className="bg-[#101113] text-white font-clash">
@@ -120,7 +145,7 @@ export default function Home() {
                 className="absolute left-0 top-1/2 -translate-y-1/2 h-[25px] w-[25px] bg-[#ffbb00e5] z-0 rounded-full transition-all duration-300 group-hover:w-full"
               ></span>
 
-              <a href="" className="z-10 px-3 py-1 relative flex items-center justify-center gap-1.5">Resume <FaCloudDownloadAlt /></a>
+              <a target="_blank" href="https://tinyurl.com/28zbpydr" className="z-10 px-3 py-1 relative flex items-center justify-center gap-1.5">Resume <FaCloudDownloadAlt /></a>
 
             </div>
 
@@ -227,16 +252,11 @@ export default function Home() {
         </section>
 
         <div className="overflow-hidden whitespace-nowrap py-2 w-full my-8 bg-black">
+
           <div className="marquee text-xl font-bold flex gap-10">
-            <p>holy moly</p>
-            <p>holy moly</p>
-            <p>holy moly</p>
-            <p>holy moly</p>
-            <p>holy moly</p>
-            <p>holy moly</p>
-            <p>holy moly</p>
-            <p>holy moly</p>
-            <p>holy moly</p>
+            {marData.map((marItem) => (
+              <p>{marItem.title}</p>
+            ))}
           </div>
         </div>
 
