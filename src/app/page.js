@@ -120,7 +120,7 @@ export default function Home() {
                 className="absolute left-0 top-1/2 -translate-y-1/2 h-[25px] w-[25px] bg-[#ffbb00e5] z-0 rounded-full transition-all duration-300 group-hover:w-full"
               ></span>
 
-              <a href="" className="z-10 px-3 py-1 relative flex items-center justify-center gap-1.5">Resume <FaCloudDownloadAlt /></a>
+              <a href="https://docs.google.com/document/d/1abazjUnpyLB5tjQzQoiAP0Ape74NnHXbmWF_P_pD5kA/edit?usp=sharing" className="z-10 px-3 py-1 relative flex items-center justify-center gap-1.5">Resume <FaCloudDownloadAlt /></a>
 
             </div>
 
@@ -228,15 +228,54 @@ export default function Home() {
 
         <div className="overflow-hidden whitespace-nowrap py-2 w-full my-8 bg-black">
           <div className="marquee text-xl font-bold flex gap-10">
-            <p>holy moly</p>
-            <p>holy moly</p>
-            <p>holy moly</p>
-            <p>holy moly</p>
-            <p>holy moly</p>
-            <p>holy moly</p>
-            <p>holy moly</p>
-            <p>holy moly</p>
-            <p>holy moly</p>
+            <p>3+ YEARS EXPERIENCE</p>
+            <p>•</p>
+            <p> BUILT 20+ PROJECTS </p>
+            <p>•</p>
+            <p>UI ANIMATION SPECIALIST</p>
+            <p>•</p>
+            <p>FRONTEND DEVELOPER</p>
+            <p>•</p>
+            <p> UI ENGINEER</p>
+            <p>•</p>
+            <p>SEO & GEO Expert</p>
+            <p>•</p>
+            <p>JAVASCRIPT</p>
+            <p>•</p>
+            <p>REACT</p>
+            <p>•</p>
+            <p>NEXT.JS</p>
+            <p>•</p>
+            <p>TAILWIND</p>
+            <p>•</p>
+            <p>THREE.JS</p>
+            <p>•</p>
+            <p>TYPESCRIPT</p>
+            <p>•</p>
+            <p>3+ YEARS EXPERIENCE</p>
+            <p>•</p>
+            <p> BUILT 20+ PROJECTS </p>
+            <p>•</p>
+            <p>UI ANIMATION SPECIALIST</p>
+            <p>•</p>
+            <p>FRONTEND DEVELOPER</p>
+            <p>•</p>
+            <p> UI ENGINEER</p>
+            <p>•</p>
+            <p>SEO & GEO Expert</p>
+            <p>•</p>
+            <p>JAVASCRIPT</p>
+            <p>•</p>
+            <p>REACT</p>
+            <p>•</p>
+            <p>NEXT.JS</p>
+            <p>•</p>
+            <p>TAILWIND</p>
+            <p>•</p>
+            <p>THREE.JS</p>
+            <p>•</p>
+            <p>TYPESCRIPT</p>
+            <p>•</p>
           </div>
         </div>
 
