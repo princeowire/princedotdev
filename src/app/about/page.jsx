@@ -7,10 +7,10 @@ const page = () => {
   return (
     <div className='bg-[#101113] font-clash'>
 
-      <div className="max-w-[1000px] mx-auto pt-16 flex flex-wrap-reverse max-lg:p-4">
+      <div className="max-w-[1000px] mx-auto !pt-16 pb-8 flex flex-wrap-reverse max-lg:p-4">
 
       <div className='w-1/2 max-md:w-full'>
-        <Image src={aboutPrince} alt='me' />
+        <Image className='rounded' src={aboutPrince} alt='me' />
       </div>
 
       <div className='w-1/2 max-md:w-full'>
@@ -24,7 +24,7 @@ const page = () => {
 
         <p className='text-center text-white p-4'>
           I began my tech journey in 2022, fueled by a passion for learning and creating with code. Since then,
-          I’ve had the opportunity to work with multiple companies, including <em className='text-amber-400'>Payr Solution</em> and <em className='text-amber-400'>Onet Solution</em>,
+          I’ve had the opportunity to work with multiple companies, including <em className='text-amber-400'>Payr</em> and <em className='text-amber-400'>Onet Solution</em>,
           where I contributed to building real-world applications and improving user experiences.
           These roles taught me the value of clean code, collaboration, and user-focused design. 
           Alongside that, I’ve worked on freelance projects that challenged me to solve problems creatively and deliver functional, 
@@ -39,7 +39,7 @@ const page = () => {
             className="absolute left-0 top-1/2 -translate-y-1/2 h-[25px] w-[25px] bg-[#ffbb00e5] z-0 rounded-full transition-all duration-300 group-hover:w-full"
           ></span>
 
-          <a href="" className="z-10 px-3 py-1 relative flex items-center justify-center gap-1.5">Resume <FaCloudDownloadAlt /></a>
+          <a href="https://tinyurl.com/28zbpydr" target='_blank' className="z-10 px-3 py-1 relative flex items-center justify-center gap-1.5">Resume <FaCloudDownloadAlt /></a>
 
          </div>
         </div>

@@ -16,25 +16,32 @@ import avtrThree from '../../../public/asset/avtr3.jpg';
 const testimonials = [
   {
     id: 1,
-    name: "John Doe",
-    feedback: "This is the best service I've ever used! Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Vincent Obioma Nwosu",
+    feedback: "Prince's replication of the work for a client was pixel perfect. I have nothing but praise for his work ethic and will always recommend his services.",
     image: avtrOne,
     position: "CEO of XYZ Corp",
   },
   {
     id: 2,
-    name: "Jane Smith",
-    feedback: "Absolutely fantastic experience! Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Samuel Abiokorigho",
+    feedback: "As quality is important so speed is also important, Prince offers both speed and quality in delivering tasks. I highly recommend him",
     image: avtrTwo,
-    position: "CTO of ABC Ltd",
+    position: "Senior Frontend Developer",
   },
   {
     id: 3,
-    name: "Sam Wilson",
-    feedback: "I would highly recommend this to anyone. Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    name: "Trust Elechi",
+    feedback: "Prince Owire was an exceptional front-end web development instructor at our training program. His teaching style was clear, engaging, and easy for students of all levels to follow. He consistently went the extra mile to ensure every student understood the concepts, and his passion for the subject was evident in every class. Our students loved learning from him and often praised his patience, professionalism, and ability to make complex topics simple.",
     image: avtrThree,
     position: "Founder of QRS Inc",
-  }
+  },
+  {
+    id: 4,
+    name: "Mcdavid Emeruwa",
+    feedback: "Prince is an innovative UI engineer, he doesn’t just work but contributes positively. He is always looking for ways to improve user experience and doing it efficiently too. One thing that is really important is he doesn’t sacrifice quality for delivery time. He delivers quality work right on time. I had a good time working with him",
+    image: avtrTwo,
+    position: "CTO of ABC Ltd",
+  },
 ];
 
 export default function MobileTestimonial() {
@@ -57,7 +64,7 @@ export default function MobileTestimonial() {
       >
         {testimonials.map((testimonial) => (
           <SwiperSlide key={testimonial.id} className='w-full'>
-            <div className="mx-auto flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 bg-gray-800 sm:p-10 rounded-lg shadow-md py-8">
+            <div className="mx-auto max-[700px]:min-h-[610px] h-full flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 bg-gray-800 sm:p-10 rounded-lg shadow-md py-8">
               <div className="relative w-[140px] h-[140px] shrink-0">
                 <div className="absolute inset-0 bg-amber-400 rounded-full -top-4 -left-4 sm:-top-5 sm:-left-5 z-0" />
                 <div className="relative z-10 w-full h-full">
