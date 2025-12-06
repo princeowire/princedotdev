@@ -2,7 +2,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Nav from "../components/nav/Nav";
 import Footer from "../components/footer/footer";
-import BlobityCursor from "@/components/blob/blobitycursor";
+// import BlobityCursor from "@/components/blob/blobitycursor";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
     </head>
     <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
       <Nav />
-      <BlobityCursor className="max-md:hidden" />
+      {/* <BlobityCursor className="max-md:hidden" /> */}
       <main>{children}</main>
 
       <Footer />
