@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import aboutPrince from '../../../public/asset/about prince.jpg';
+import aboutPrince from '../../../public/asset/about-prince.jpg';
 import { FaCloudDownloadAlt } from "react-icons/fa";
 
 const page = () => {
