@@ -9,7 +9,6 @@ import { FaGithub } from "react-icons/fa";
 
 import linkArrow from "../../public/asset/link-arrow.svg";
 import sticker from "../../public/asset/tenor-two.gif";
-import certificate from "../../public/asset/sabi-ticket.png";
 import blob from '../../public/asset/blob.png';
 import nameArrow from '../../public/asset/name_arrow curved_.svg';
 import sndArrow from '../../public/asset/pic-arrow.png';
@@ -29,6 +28,7 @@ import ContactForm from "@/components/contact-from/contact-form";
 // import AvatarSection from "@/components/welcome/welcome";
 import Testimonail from "@/components/testimonail/testimonail";
 import Test from "@/components/testimonail/test";
+import Certificate from "@/components/certificates/certificate";
 
 export default function Home() {
   const projectData = [
@@ -106,7 +106,7 @@ export default function Home() {
           <h1 className="text-3xl">I&apos;m Prince Owire</h1>
 
          <p className="font-bold text-white text-[45.6px] mt-2 mb-5 max-sm:max-w-[300px]">
-            A FRONTEND <div className="hidden max-sm:block"></div>  {typedText}
+            A FRONTEND <span className="hidden max-sm:block"></span>  {typedText}
             <span className="animate-blink">|</span>
           </p>
 
@@ -155,11 +155,7 @@ export default function Home() {
                 <Image src={nameArrow} alt="name arrow" />
               </div>
 
-              <div className="flex items-center justify-between mt-14">
-                <button className="w-[40px] h-[40px] flex justify-center items-center border-2 border-amber-800 rounded-full m-1"><p>◁</p></button>
-                <Image src={certificate} alt="certificate" className="w-[calc(100%-108px)]" />
-                <button className="w-[40px] h-[40px] flex justify-center items-center border-2 border-amber-800 rounded-full m-1"><p>▷</p></button>
-              </div>
+              <Certificate />
 
               <div className="sticker flex items-center justify-center">
                 <Image src={sticker} alt="sticker" className="rounded-[10px] mt-8 bent w-[120px]" />

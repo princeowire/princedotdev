@@ -5,6 +5,8 @@ import Ham from '../hambuger/Nav'
 import { AnimatePresence } from 'framer-motion';
 import { usePathname } from 'next/navigation';
 import { useState, useEffect } from "react";
+import Image from 'next/image';
+import logo from '../../../public/asset/logodotprince.png'
 
 const Nav = () => {
 
@@ -21,7 +23,7 @@ const Nav = () => {
 
       <div className='max-w-[1000px] w-full flex items-center justify-between max-lg:px-4'>
 
-        <a href="./">LOGO</a>
+        <a href="./"><Image className='w-[40px] h-[40px] rounded-[50px]' src={logo} alt='logo' /></a>
 
         <div className='flex gap-5 links max-md:hidden'>
           <Link href="/" >Home</Link>
