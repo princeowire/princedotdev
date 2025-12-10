@@ -4,9 +4,8 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import certificate1 from "../../../public/asset/sabi-ticket.png";
 import certificate2 from "../../../public/asset/sabi-ticket2.jpg";
-import certificate3 from "../../../public/asset/sabi-ticket.png";
 
-const images = [certificate1, certificate2, certificate3];
+const images = [certificate1, certificate2];
 
 const Certificate = () => {
   const [currentIndex, setCurrentIndex] = useState(0);

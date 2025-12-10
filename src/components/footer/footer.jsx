@@ -2,6 +2,8 @@ import React from 'react'
 
 import { CiLinkedin, CiTwitter, CiMail } from "react-icons/ci";
 import { FaGithub } from "react-icons/fa";
+import logo from '../../../public/asset/logodotprince.png'
+import Image from 'next/image';
 
 const Footer = () => {
   return (
@@ -9,7 +11,7 @@ const Footer = () => {
       <div className='max-w-[1000px] flex flex-wrap flex-col gap-4 m-auto max-lg:px-4 py-8'>
 
         <div>
-          <h1> L O G O </h1>
+          <a href="./"><Image className='w-[40px] h-[40px] rounded-[50px]' src={logo} alt='logo' /></a>
         </div>
 
         <div className='flex items-center gap-4 justify-between max-sm:justify-center flex-wrap'>
